@@ -25,5 +25,7 @@
 
 <div class="topMenu">
     <a href="index.jsp" class="button">Home</a>
-    <a href="login.jsp" class="button">Login</a>
+    <a href="products.jsp" class="button">Manage Orders</a>
+    <a href="user.jsp" class="button">User</a>
+    <a href="index.jsp" class="button">Log Out</a>
 </div>

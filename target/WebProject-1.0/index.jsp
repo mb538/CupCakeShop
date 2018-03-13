@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
-        <title>WebProject</title>
+        <title>CupCakeShop</title>
     </head>
     <body>
         
@@ -18,24 +18,24 @@
             <label id="labelUsername" for="username">Username</label>
             <input type="text" name="username" />
             <input type="hidden" name="origin" value="search" />
-            <input type="submit" value="SEARCH USER" />
+            <input class="button" id="button2" type="submit" value="SEARCH USER" />
         </form>
         
         <h2>CREATE USER</h2>
         
         <form id="formCreate" action="Control" method="post">
             <label id="labelUsername" for="username">Username</label>
-            <input type="text" name="username" />
+            <input type="text" name="username" required/>
             <label id="labelPassword" for="password">Password</label>
-            <input type="text" name="password" />
+            <input type="text" name="password" required />
             <label id="labelAdmin" for="admin">Admin</label>
-            <input type="text" name="admin" />
+            <input type="text" name="admin" required />
             <label id="labelBalance" for="balance">Balance</label>
-            <input type="number" name="balance" />
+            <input type="number" name="balance" required/>
             <label id="labelEmail" for="email">Email</label>
-            <input type="text" name="email" />
+            <input type="text" name="email" required/>
             <input type="hidden" name="origin" value="create" />
-            <input type="submit" value="CREATE USER" />
+            <input class="button" id="button2" type="submit" value="CREATE USER" />
         </form>
         
     </body>

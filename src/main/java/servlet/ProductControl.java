@@ -40,7 +40,7 @@ public class ProductControl extends HttpServlet {
 
                     dm.createOrder(new Order(userid, bottom, topping, amount));
 
-                    response.sendRedirect("ordercreated.jsp");        
+                    response.sendRedirect("products.jsp");        
 
                 }
                 break;

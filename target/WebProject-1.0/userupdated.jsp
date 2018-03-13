@@ -3,15 +3,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>WebProject - UserUpdated</title>
+        <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+        <title>CupCakeShop - UserUpdated</title>
     </head>
     <body>
         
+        <%@include file="includes/topmenu.jsp" %>
+        
         <h1>USER UPDATED</h1>
         
-        <p>USER UPDATED</p>
-        
-        <a href="index.jsp">BACK...</a>
+        <a href="user.jsp">BACK...</a>
         
     </body>
 </html>

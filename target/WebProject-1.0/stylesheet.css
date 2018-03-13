@@ -7,52 +7,111 @@ p
 {
     margin: 0px;
 }
-
-a, h1, h2, p, label, input
+h1, h2
+{
+    text-align: center;
+}
+a, p, label
 {
     font-family: arial;
+    color: #a48c6f;
 }
-
+h1, h2
+{
+    font-family: arial;
+    color: orange;
+}
+/*
+input
+{
+    font-family: arial;
+    color: white;
+} */
 form
 {
     margin: 10px 0px;
 }
-
-#formSearch, #formCreate
+#cupcake
 {
-    background: cornflowerblue;
+    
+}
+html, body
+{
+    /*margin: 0;*/
+    height: 100%;
+    background: linear-gradient(#7a5f43, #3b2613);
+}
+
+#formSearch, #formCreate, #createOrder, #formUpdate, #formDelete
+{
+    background: #3b2613;
     width: 500px;
     padding: 50px 100px;
     margin: auto;
     border: 2px black solid;
 }
 
-#formSearch *, #formCreate *
+#formSearch *, #formCreate *, #createOrder *, #formUpdate *, #formDelete *
 {
     width: 100%;
     display: block;
     margin: 5px 0px;
     padding: 0px;
-    border: 2px darkgray solid;
+    border: 2px black solid;
     box-sizing: border-box;
     text-align: center;
 }
 
+#products table
+{
+    border: 1px solid black;
+    background-color: #3b2613;
+}
+#products table tr
+{
+    color: white;
+  
+}
+#products table tr:hover
+{
+    color: orange;
+}
+.orderTable2
+{
+    background: #3b2613;
+    width: 500px;
+    padding: 50px 50px;
+    margin: auto;
+    border: 2px black solid;
+}
+
 #formSearch label, #formCreate label
 {
-    background: black;
+    background: #7a5f43;
     color: white;
 }
 
 #usersFound a
 {
-    background: cornflowerblue;
+    background: #3b2613;
     text-align: center;
     margin: 10px;
-    color: black;
+    color: #3b2613;
     text-decoration: none;
 }
 
+#button2:hover
+{
+    color: orange;
+    background-color: #7a5f43;
+}
+
+#login
+{
+    margin: auto;
+    text-align: center;
+    padding: 400px;
+}
 .special
 {
     background: yellow;

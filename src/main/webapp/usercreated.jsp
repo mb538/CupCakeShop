@@ -3,13 +3,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>WebProject - UserCreated</title>
+        <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+        <title>CupCakeShop - UserCreated</title>
     </head>
     <body>
         
-        <h1>USER CREATED</h1>
+        <%@include file="includes/menu.jsp" %>
         
-        <p>USER CREATED</p>
+        <h1>USER CREATED</h1>
         
         <a href="index.jsp">BACK...</a>
         

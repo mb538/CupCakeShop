@@ -5,9 +5,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
         <title>WebProject - Users</title>
     </head>
     <body>
+        
+        <%@include file="includes/menu.jsp" %>
         
         <h1>USERS</h1>
         

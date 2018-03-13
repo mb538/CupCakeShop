@@ -3,13 +3,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>WebProject - OrderDeleted</title>
+        <title>Error Page</title>
     </head>
     <body>
-        <h1>ORDER UPDATED</h1>
-        
-        <p>ORDER UPDATED</p>
-        
-        <a href="index.jsp">BACK...</a>
+        <h1>Something went wrong...</h1>
     </body>
 </html>

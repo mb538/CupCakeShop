@@ -29,6 +29,7 @@ public class Control extends HttpServlet
         {
             case "login":
                 {
+                    if(dm.validateUser(request.getParameter("username"), request.getParameter("password")) != null){
                     String username = request.getParameter("username");
                     String password = request.getParameter("password");
 
@@ -38,7 +39,10 @@ public class Control extends HttpServlet
 
                     //request.getRequestDispatcher("user.jsp").forward(request, response);
                     response.sendRedirect("user.jsp");                
-
+                    }
+                    else {
+                    response.sendRedirect("login.jsp");     
+                    }
                 }
                 break;
             case "search":
@@ -55,6 +59,7 @@ public class Control extends HttpServlet
                 break;
             case "create":
                 {
+                    //if (request.getParameter("username") != null && request.getParameter("password") != null && request.getParameter("admin") != null){
                     String username = request.getParameter("username");
                     String password = request.getParameter("password");
                     boolean admin = Boolean.parseBoolean(request.getParameter("admin"));
@@ -64,7 +69,10 @@ public class Control extends HttpServlet
                     dm.createUser(new User(username, password, admin, balance, email));
 
                     response.sendRedirect("usercreated.jsp");
-
+//                    }
+//                    else {
+//                    response.sendRedirect("error.jsp");    
+                    
                 }
                 break;
             case "update":

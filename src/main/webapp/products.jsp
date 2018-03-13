@@ -8,11 +8,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Orders</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+        <title>CupCakeShop - Orders</title>
     </head>
-    <body>
-        <%User user = (User) session.getAttribute("user"); %>
+    <body id="products">
+        <%User user = (User) session.getAttribute("user");%> 
+        <%if(user == null){ 
+            response.sendRedirect("login.jsp");
+          }
+        %>
         <%OrderDataMapper dm = new OrderDataMapper(new DataSource1().getDataSource()); %>
+        
+         <%@include file="includes/topmenu.jsp" %>
+         
+         <h1>MANAGE ORDERS</h1>
+         
         <p>
             Logged in as: <%= user.getUsername() %><br>
             Balance: <%= user.getBalance() %> kr.<br>
@@ -20,7 +33,7 @@
         
         <h2>CREATE ORDER</h2>
         
-        <form action="ProductControl" method="post">
+        <form action="ProductControl" method="post" id="createOrder">
             <input type="hidden" name="userid" value ="<%= user.getId() %>" />
             <select name="bottom">
                 <option value="Almond">Almond: 7kr.</option>
@@ -42,16 +55,14 @@
             </select>
             <input type="number" name="amount" placeholder="Amount" />
             <input type="hidden" name="origin" value="create" />
-            <input type="submit" value="CREATE ORDER" />
+            <input type="submit" value="CREATE ORDER" id="button2" />
         </form>
-            
-        <h2>UPDATE ORDER</h2>
-        <% ArrayList<Order> orders = dm.getOrders(user.getId());
-            
-            if(orders.size() > 0)
-            {
-        %>                 
-                <table>
+        
+        <% ArrayList<Order> orders = dm.getOrders(user.getId()); %>
+        <h2>ORDERS</h2>
+        </div>
+        <div class="orderTable2">   
+            <table class="table">
                 <tr>
                     <th>Order ID</th>
                     <th>User ID</th>
@@ -60,28 +71,21 @@
                     <th>Amount</th>
                     <th>Total Price</th>
                 </tr>
-                <tr>
-                  <%
+                
+                 <%
                 for(Order o : orders)
                 { %>
+                    <tr>
                     <td> <%= o.getId() %> </td>  
                     <td> <%= user.getId() %> </td>  
                     <td> <%= o.getBottom() %> </td>
                     <td> <%= o.getTopping() %> </td>  
                     <td> <%= o.getAmount() %> </td>  
                     <td> <%= o.getTotalPrice() %> kr.</td>                                    
-                <tr>
-                    
-            <%  }
-            }
-            else
-            {
-            %>
-                <p>No orders found...</p>
-        <%
-            }
-        %>
-              
-        <a href="index.jsp">BACK...</a>
+                </tr> 
+                <% } %>
+            </table>
+                
+        </div>
     </body>
 </html>

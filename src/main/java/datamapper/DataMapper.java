@@ -60,11 +60,8 @@ public class DataMapper implements DataMapperInterface
         {
             dbc.open();
 
-//            String sql = "select * from user";
-//            ResultSet resultset = dbc.executeQuery(sql);
             String sql = "SELECT * FROM user";
             PreparedStatement ps = dbc.preparedStatement(sql);
-            //ps.setInt(1, 1); // ???????????????????????????????
             ResultSet resultset = ps.executeQuery();
             
             while (resultset.next())
@@ -138,8 +135,6 @@ public class DataMapper implements DataMapperInterface
         {
             dbc.open();
 
-//            String sql = "select * from user where user_id = " + id;
-//            ResultSet resultset = dbc.executeQuery(sql);
             String sql = "SELECT * FROM user WHERE userid = ?";
             PreparedStatement ps = dbc.preparedStatement(sql);
             ps.setInt(1, id);
@@ -174,8 +169,6 @@ public class DataMapper implements DataMapperInterface
         {
             dbc.open();
 
-//            String sql = "select * from user where username = '" + name + "'";
-//            ResultSet resultset = dbc.executeQuery(sql);
             String sql = "SELECT * FROM user WHERE username = ?";
             PreparedStatement ps = dbc.preparedStatement(sql);
             ps.setString(1, name);
@@ -210,16 +203,10 @@ public class DataMapper implements DataMapperInterface
         {
             dbc.open();
             
-//            String sql = "DELETE FROM team_user WHERE user_id = ?";
-//            PreparedStatement ps = dbc.preparedStatement(sql);
-//            ps.setInt(1, id);    
-//            String sql = "delete from team_user where user_id = " + id + ";";
-//            ps.executeUpdate();
-
             String sql = "DELETE FROM user WHERE userid = ?";
             PreparedStatement ps = dbc.preparedStatement(sql);
             ps.setInt(1, id);  
-//            sql = "delete from user where user_id = " + id + ";";
+            
             ps.executeUpdate();
 
             dbc.close();
@@ -238,7 +225,6 @@ public class DataMapper implements DataMapperInterface
     public boolean updateUser(User u)
     {
         
-        //int admin = Integer.parseInt(u.isAdmin());
         int admin = 0;
         if (u.isAdmin() == true)
             admin = 1;
@@ -249,8 +235,9 @@ public class DataMapper implements DataMapperInterface
         {
             dbc.open();
             
-            String sql = "UPDATE order SET username = ?, password = ?, admin = ?, balance = ?, email = ? WHERE userid = ?";
+            String sql = "UPDATE user SET username = ?, password = ?, admin = ?, balance = ?, email = ? WHERE userid = ?";
             PreparedStatement ps = dbc.preparedStatement(sql);
+            
             ps.setString(1, u.getUsername());
             ps.setString(2, u.getPassword());
             ps.setInt(3, admin);
@@ -260,16 +247,6 @@ public class DataMapper implements DataMapperInterface
             
             ps.executeUpdate();
             
-//            String sql = "update user set "
-//                    + "username = '" + u.getUsername() + "', "
-//                    + "password = '" + u.getPassword() + "', "
-//                    + "admin = '" + admin + "', "
-//                    + "balance = '" + u.getBalance() + "', " 
-//                    + "email = '" + u.getEmail() + "' "
-//                    + "where userid = " + u.getId();
-
-//            dbc.executeUpdate(sql);
-
             dbc.close();
 
             return true;

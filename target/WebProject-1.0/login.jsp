@@ -3,15 +3,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>WebProject - Login</title>
+        <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+        <title>CupCakeShop - Login</title>
     </head>
     <body>
         
-        <form action="Control" method="post">
-            <input type="text" name="username" value="" placeholder="Username" />
-            <input type="password" name="password" value="" placeholder="Password" />
+         <%@include file="includes/menu.jsp" %>
+         
+        <form action="Control" method="post" id="login">
+            <input type="text" name="username" value="" placeholder="Username" required />
+            <input type="password" name="password" value="" placeholder="Password" required />
             <input type="hidden" name="origin" value="login" />
-            <input type="submit" value="Log in" />
+            <input type="submit" value="Log in" id="button2" />
         </form>
         
     </body>
