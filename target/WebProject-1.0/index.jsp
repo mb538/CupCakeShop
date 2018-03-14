@@ -15,7 +15,7 @@
         <h2>SEARCH USER</h2>
         
         <form id="formSearch" action="Control" method="post">
-            <label id="labelUsername" for="username">Username</label>
+            <label class="formLabel" for="username">Username</label>
             <input type="text" name="username" />
             <input type="hidden" name="origin" value="search" />
             <input class="button" id="button2" type="submit" value="SEARCH USER" />
@@ -24,15 +24,15 @@
         <h2>CREATE USER</h2>
         
         <form id="formCreate" action="Control" method="post">
-            <label id="labelUsername" for="username">Username</label>
+            <label class="formLabel" for="username">Username</label>
             <input type="text" name="username" required/>
-            <label id="labelPassword" for="password">Password</label>
+            <label class="formLabel" for="password">Password</label>
             <input type="text" name="password" required />
-            <label id="labelAdmin" for="admin">Admin</label>
+            <label class="formLabel" for="admin">Admin</label>
             <input type="text" name="admin" required />
-            <label id="labelBalance" for="balance">Balance</label>
+            <label class="formLabel" for="balance">Balance</label>
             <input type="number" name="balance" required/>
-            <label id="labelEmail" for="email">Email</label>
+            <label class="formLabel" for="email">Email</label>
             <input type="text" name="email" required/>
             <input type="hidden" name="origin" value="create" />
             <input class="button" id="button2" type="submit" value="CREATE USER" />

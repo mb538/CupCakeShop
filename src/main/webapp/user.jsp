@@ -38,10 +38,13 @@
         <h2>UPDATE USER</h2>
         
         <form action="Control" method="post" id="formUpdate">
+            <label class="formLabel" for="username">Username</label>
             <input type="text" name="username" value="<%= user.getUsername() %>" required />
+            <label class="formLabel" for="password">Password</label>
             <input type="text" name="password" value="<%= user.getPassword() %>" required/>
             <input type="hidden" name="admin" value="<%= user.isAdmin() %>" required />
             <input type="hidden" name="balance" value="<%= user.getBalance() %>" required />
+            <label class="formLabel" for="email">Email</label>
             <input type="text" name="email" value="<%= user.getEmail() %>" required />
             <input type="hidden" name="origin" value="update" />
             <input type="submit" value="UPDATE USER" id="button2" />
@@ -51,7 +54,7 @@
         
         <form action="Control" method="post" id="formDelete">
             <input type="hidden" name="origin" value="delete" />
-            <input type="submit" value="DELETE USER" id="button2" />
+            <input type="submit" value="DELETE USER" id="button2" onclick="return confirm('Are you sure?')" />
         </form>
 
     </body>

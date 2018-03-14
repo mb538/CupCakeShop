@@ -47,7 +47,7 @@ public class OrderDataMapper {
             dbc.open();
             
             String sql = "UPDATE order SET orderid = ?, userid = ?, bottom = ?, topping = ?, amount = ? WHERE userid = ?";
-            //String sql = "UPDATE order SET bottom = ?, topping = ?, amount = ? WHERE userid = ?";
+            
             PreparedStatement ps = dbc.preparedStatement(sql);
             ps.setInt(1, o.getId());
             ps.setInt(2, o.getUserid());
@@ -185,12 +185,7 @@ public class OrderDataMapper {
                 String topping = resultset.getString("topping");
                 int totalPrice = resultset.getInt("totalprice");
                 int amount = resultset.getInt("amount");
-//                System.out.println("Order ID: " + orderid);
-//                System.out.println("User ID: " + userid);
-//                System.out.println("Bottom: " + bottom);
-//                System.out.println("Topping: " + topping);
-//                System.out.println("Total Price: " + totalPrice);
-//                System.out.println("Amount: " + amount);
+
                 Order o = new Order(orderid, userid, bottom, topping, totalPrice, amount);
 
                 orders.add(o);

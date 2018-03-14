@@ -16,41 +16,7 @@ public class DataMapper implements DataMapperInterface
     {
         dbc.setDataSource(ds);
     }
-    /*
-    @Override
-    public ArrayList<CupCake> getOrders() {
-        ArrayList<CupCake> orders = new ArrayList();
-        
-        try
-        {
-            dbc.open();
-            
-            String sql = "SELECT * FROM orders";
-            ResultSet resultset = dbc.query(sql);
-
-            while(resultset.next())
-            {
-                int orderid = resultset.getInt("orders.orderid");
-                int height = resultset.getInt("height");
-                int width = resultset.getInt("width");
-                int frametype = resultset.getInt("frametype");
-                int price = resultset.getInt("price");
-                
-                CupCake o = new CupCake(orderid, bot, top, totalPrice);
-                
-                orders.add(o);
-            }
-            
-            dbc.close();
-        }
-        catch(SQLException e)
-        {
-            e.printStackTrace();
-        }
-        
-        return orders;
-    }
-    */
+    
     @Override
     public ArrayList<User> getUsers()
     {
@@ -279,14 +245,6 @@ public class DataMapper implements DataMapperInterface
             ps.setString(5, u.getEmail());
             
             ps.executeUpdate();
-//            String sql = "insert into user values(null, "
-//                    + "'" + u.getUsername() + "', "
-//                    + "'" + u.getPassword() + "', "
-//                    + "'" + admin + "', "
-//                    + "'" + u.getBalance() + "', '"
-//                    + u.getEmail() + "')";
-//
-//            dbc.executeUpdate(sql);
 
             dbc.close();
 
@@ -307,14 +265,7 @@ public class DataMapper implements DataMapperInterface
         try
         {
             dbc.open();
-            
-            /*
-            String sql = "select * from user where username = '" + username + "' and password = '" + password + "'";
-            System.out.println("SQL: " + sql);
-            ResultSet resultSet = dbc.executeQuery(sql);
-            */
-            
-            //PreparedStatement
+                   
             String sql = "SELECT * FROM user WHERE username = ? AND password = ?";
             PreparedStatement preparedStatement = dbc.preparedStatement(sql);
             preparedStatement.setString(1, username);
@@ -326,8 +277,10 @@ public class DataMapper implements DataMapperInterface
             {
                 int id = resultSet.getInt("userid");
                 boolean admin = resultSet.getInt("admin") > 0;
+                int balance = resultSet.getInt("balance");
+                String email = resultSet.getString("email");
                 
-                user = new User(id, username, password, admin);
+                user = new User(id, username, password, admin, balance, email);
             }
 
             dbc.close();
