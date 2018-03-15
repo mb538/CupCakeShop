@@ -7,10 +7,7 @@ p
 {
     margin: 0px;
 }
-h1, h2
-{
-    text-align: center;
-}
+
 a, p, label
 {
     font-family: arial;
@@ -20,6 +17,7 @@ h1, h2
 {
     font-family: arial;
     color: orange;
+    text-align: center;
 }
 /*
 input
@@ -35,9 +33,16 @@ form
 {
     
 }
+/*
 html, body
 {
-    /*margin: 0;*/
+    margin: 0;
+    height: 100%;
+    background: linear-gradient(#7a5f43, #3b2613);
+}
+*/
+body, html
+{
     height: 100%;
     background: linear-gradient(#7a5f43, #3b2613);
 }
@@ -100,7 +105,7 @@ html, body
     text-decoration: none;
 }
 
-#button2:hover
+.button2:hover
 {
     color: orange;
     background-color: #7a5f43;

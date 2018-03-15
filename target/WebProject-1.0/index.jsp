@@ -16,26 +16,29 @@
         
         <form id="formSearch" action="Control" method="post">
             <label class="formLabel" for="username">Username</label>
-            <input type="text" name="username" />
+            <input type="text" name="username" max="50" />
             <input type="hidden" name="origin" value="search" />
-            <input class="button" id="button2" type="submit" value="SEARCH USER" />
+            <input class="button2" type="submit" value="SEARCH USER" />
         </form>
         
         <h2>CREATE USER</h2>
         
         <form id="formCreate" action="Control" method="post">
             <label class="formLabel" for="username">Username</label>
-            <input type="text" name="username" required/>
+            <input type="text" name="username" min="3" max="20" required/>
             <label class="formLabel" for="password">Password</label>
-            <input type="text" name="password" required />
+            <input type="text" name="password" min="3" max="20" required />
             <label class="formLabel" for="admin">Admin</label>
-            <input type="text" name="admin" required />
+            <select name="admin">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
             <label class="formLabel" for="balance">Balance</label>
-            <input type="number" name="balance" required/>
+            <input type="number" name="balance" min="0" max="10000" step="1" required/>
             <label class="formLabel" for="email">Email</label>
-            <input type="text" name="email" required/>
+            <input type="email" name="email" min="3" max="20" required/>
             <input type="hidden" name="origin" value="create" />
-            <input class="button" id="button2" type="submit" value="CREATE USER" />
+            <input class="button2" type="submit" value="CREATE USER" />
         </form>
         
     </body>

@@ -25,12 +25,7 @@
          <%@include file="includes/topmenu.jsp" %>
          
          <h1>MANAGE ORDERS</h1>
-         
-        <p>
-            Logged in as: <%= user.getUsername() %><br>
-            Balance: <%= user.getBalance() %> kr.<br>
-        </p>
-        
+                
         <h2>CREATE ORDER</h2>
         
         <form action="ProductControl" method="post" id="createOrder">
@@ -53,9 +48,9 @@
                 <option value="Rum/Raisin">Rum/Raisin: 7kr.</option>
                 <option value="Strawberry">Strawberry: 6kr.</option>
             </select>
-            <input type="number" name="amount" placeholder="Amount" />
+            <input type="number" name="amount" placeholder="Amount" min="1" max="2000" required />
             <input type="hidden" name="origin" value="create" />
-            <input type="submit" value="CREATE ORDER" id="button2" />
+            <input type="submit" value="CREATE ORDER" class="button2" />
         </form>
         
         <% ArrayList<Order> orders = dm.getOrders(user.getId()); %>

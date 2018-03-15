@@ -45,6 +45,14 @@ public class Control extends HttpServlet
                     }
                 }
                 break;
+            case "logout":
+                {
+                    if(request.getSession() != null){
+                        request.getSession().invalidate();
+                        response.sendRedirect("login.jsp");                
+                    }
+                }
+                break;
             case "search":
                 {
                     String username = request.getParameter("username");
