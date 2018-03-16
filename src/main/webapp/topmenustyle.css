@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;     
+}
+.topMenu{
+    overflow: hidden;
+    background-color: #3b2613; 
+    height: 50px;
+}
+.topMenu input{
+    float: left;
+    display: block;
+    font-size: 16px;
+    color: #a48c6f;    
+    padding: 6px 18px;
+    text-decoration: none;
+    background-color: #3b2613;
+    border: none;
+    transition-duration: 0.3s;
+}
+.topMenu input:hover{
+    background-color: #7a5f43;
+    color: orange;
+}
+.topMenu a{
+    float: left;
+    display: block;
+    font-size: 16px;
+    color: #a48c6f; 
+    padding: 16px 18px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+.topMenu a:hover{
+    background-color: #7a5f43;
+    color: orange;
+}
+

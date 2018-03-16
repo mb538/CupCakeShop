@@ -67,7 +67,6 @@ public class Control extends HttpServlet
                 break;
             case "create":
                 {
-                    //if (request.getParameter("username") != null && request.getParameter("password") != null && request.getParameter("admin") != null){
                     String username = request.getParameter("username");
                     String password = request.getParameter("password");
                     boolean admin = Boolean.parseBoolean(request.getParameter("admin"));
@@ -76,11 +75,7 @@ public class Control extends HttpServlet
 
                     dm.createUser(new User(username, password, admin, balance, email));
 
-                    response.sendRedirect("usercreated.jsp");
-//                    }
-//                    else {
-//                    response.sendRedirect("error.jsp");    
-                    
+                    response.sendRedirect("usercreated.jsp");                
                 }
                 break;
             case "update":

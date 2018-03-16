@@ -11,8 +11,8 @@
          <%@include file="includes/menu.jsp" %>
          
         <form action="Control" method="post" id="login">
-            <input type="text" name="username" value="" placeholder="Username" required />
-            <input type="password" name="password" value="" placeholder="Password" required />
+            <input type="text" name="username" value="" placeholder="Username" pattern=".{3,20}" required />
+            <input type="password" name="password" value="" placeholder="Password" pattern=".{3,20}" required />
             <input type="hidden" name="origin" value="login" />
             <input type="submit" value="Log in" class="button2" />
         </form>

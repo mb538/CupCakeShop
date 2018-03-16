@@ -17,6 +17,7 @@
     <body id="products">
         <%User user = (User) session.getAttribute("user");%> 
         <%if(user == null){ 
+            user = new User(0, "Anonymous", "none", false);
             response.sendRedirect("login.jsp");
           }
         %>

@@ -19,12 +19,7 @@ h1, h2
     color: orange;
     text-align: center;
 }
-/*
-input
-{
-    font-family: arial;
-    color: white;
-} */
+
 form
 {
     margin: 10px 0px;
@@ -33,18 +28,16 @@ form
 {
     
 }
-/*
-html, body
-{
-    margin: 0;
+
+body
+{ 
     height: 100%;
-    background: linear-gradient(#7a5f43, #3b2613);
+    background: linear-gradient(#7a5f43, #3b2613); 
 }
-*/
-body, html
-{
+html
+{ 
     height: 100%;
-    background: linear-gradient(#7a5f43, #3b2613);
+    background-color: #3b2613;
 }
 
 #formSearch, #formCreate, #createOrder, #formUpdate, #formDelete
@@ -104,7 +97,12 @@ body, html
     color: #3b2613;
     text-decoration: none;
 }
-
+.button2
+{
+    color: black;
+    background-color: white;
+    transition-duration: 0.3s;
+}
 .button2:hover
 {
     color: orange;

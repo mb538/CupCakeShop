@@ -32,7 +32,6 @@ public class ProductControl extends HttpServlet {
         {
             case "create":
                 {
-//                    int orderid = Integer.parseInt(request.getParameter("orderid"));
                     int userid = Integer.parseInt(request.getParameter("userid"));
                     String bottom = request.getParameter("bottom");
                     String topping = request.getParameter("topping");    
@@ -41,7 +40,6 @@ public class ProductControl extends HttpServlet {
                     dm.createOrder(new Order(userid, bottom, topping, amount));
 
                     response.sendRedirect("products.jsp");        
-
                 }
                 break;
                 
@@ -51,9 +49,7 @@ public class ProductControl extends HttpServlet {
                     int userid = Integer.parseInt(request.getParameter("userid"));
                     String bottom = request.getParameter("bottom");
                     String topping = request.getParameter("topping");
-                    
-//                    Order order = (Order) request.getSession().getAttribute("order"); //.getAttribute("order")????????
-                    
+                                       
                     if (dm.getOrder(orderid) != null)
                     {
                         Order order = dm.getOrder(orderid);
@@ -71,12 +67,10 @@ public class ProductControl extends HttpServlet {
             case "delete":
                 {
                     int orderid = Integer.parseInt(request.getParameter("orderid"));
-                    
-//                    Order order = (Order) request.getSession().getAttribute("order"); //////////////////////////////
-                    
+                                       
                     if (dm.getOrder(orderid) != null)
                     {
-                        dm.deleteOrder(orderid); // order.getId()
+                        dm.deleteOrder(orderid); 
 
                         response.sendRedirect("orderdeleted.jsp"); 
                     }                
