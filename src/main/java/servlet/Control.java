@@ -41,7 +41,9 @@ public class Control extends HttpServlet
                     response.sendRedirect("user.jsp");                
                     }
                     else {
-                    response.sendRedirect("login.jsp");     
+                    request.setAttribute("loginError", "Invalid username or password");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                    //response.sendRedirect("login.jsp");     
                     }
                 }
                 break;

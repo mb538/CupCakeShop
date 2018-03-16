@@ -19,7 +19,13 @@ h1, h2
     color: orange;
     text-align: center;
 }
-
+#error
+{
+    font-family: arial;
+    color: orange;
+    text-align: center;
+    padding-bottom: 3px;
+}
 form
 {
     margin: 10px 0px;
